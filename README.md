@@ -34,7 +34,7 @@ const Todo =new mongoose.model('Todo', todoSchema);
 
  router.get('/:id', async (req, res ) => {
     console.log("GET Based on ID  " + req.params.id)
-    // await Todo.update({ _id: req.params.id }, { $set: {
+     await Todo.update({ _id: req.params.id }, { $set: {
         try {
             await Todo.find(
                 { _id: req.params.id }
