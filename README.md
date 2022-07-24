@@ -1,3 +1,5 @@
+
+`
 # CRUD-Using-Express-JS-and-MongoDB
 CRUD Using Express JS and MongoDB , used Mongoose
 `
@@ -10,10 +12,10 @@ const mongoose = require('mongoose');
 const todoSchema = require('../schemas/todoSchema')
 
 const Todo =new mongoose.model('Todo', todoSchema);
-`
+
 
 // GET ALL THE TODOS
-` router.get('/', async (req, res ) => {
+ router.get('/', async (req, res ) => {
     console.log("All Todo")
     try {
         await Todo.find(
@@ -24,10 +26,10 @@ const Todo =new mongoose.model('Todo', todoSchema);
         res.status(500).json({ message: err });
       }
 })
-`
+
 
 // GET A TODO BY ID
-` router.get('/:id', async (req, res ) => {
+ router.get('/:id', async (req, res ) => {
     console.log("GET Based on ID  " + req.params.id)
     // await Todo.update({ _id: req.params.id }, { $set: {
         try {
@@ -44,10 +46,10 @@ const Todo =new mongoose.model('Todo', todoSchema);
 })
 
 
-`
+
 
 // PUT A TODO BY ID
-` router.put('/:id', async (req, res ) => {
+ router.put('/:id', async (req, res ) => {
     console.log("Update Based on ID  " + req.params.id)
     // await Todo.update({ _id: req.params.id }, { $set: {
         try {
@@ -67,10 +69,9 @@ const Todo =new mongoose.model('Todo', todoSchema);
  
 })
 
-`
 
 // POST  TODO
-` router.post('/', async (req, res ) => {
+ router.post('/', async (req, res ) => {
     console.log("Add New Todo By Post Request")
     const newTodo = new Todo(req.body) 
     console.log(newTodo)
@@ -88,7 +89,7 @@ const Todo =new mongoose.model('Todo', todoSchema);
     
 })
 
-`
+
 // POST INSERT  MULTIPLE TODO
  ` router.post('/all', async (req, res ) => {
     console.log("Add New Todo By Post Request")
@@ -109,9 +110,9 @@ const Todo =new mongoose.model('Todo', todoSchema);
 
 })
 
-`
+
 // DELETE A TODO BY ID
- ` router.delete('/:id', async (req, res ) => {
+  router.delete('/:id', async (req, res ) => {
     console.log("Delete Todo ID " )
     try {
         await Todo.deleteOne(
